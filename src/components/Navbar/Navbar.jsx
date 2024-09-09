@@ -18,7 +18,7 @@ const Navbar = () => {
     return (
         <nav className="border-b">
             <div className="flex items-center justify-between p-4 max-w-7xl mx-auto">
-                <Link className="pt-1"><span className="text-5xl font-bold logo">NORDIK GYM</span></Link>
+                <Link className="pt-1" to={"/"}><span className="text-5xl font-bold logo">NORDIK GYM</span></Link>
 
                 <div className="hidden md:flex space-x-4 pt-1">
                     {navItems.map(navItem => (
