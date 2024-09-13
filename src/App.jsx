@@ -4,6 +4,7 @@ import Navbar from './components/Navbar/Navbar.jsx'
 import HomeSection from './components/HomeSection/HomeSection'
 import SheduleSection from './components/SheduleSection/SheduleSection'
 import PricesSection from './components/PricesSection/PricesSection'
+import ContactSection from './components/ContactSection/ContactSection'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -14,6 +15,7 @@ function App() {
       <HomeSection />
       <SheduleSection />
       <PricesSection />
+      <ContactSection />
     </>
   )
 }
