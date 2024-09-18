@@ -42,15 +42,9 @@ const SheduleSection = () => {
         { time: "4:00 PM", class: "Zumba", intensity: "Moderada" },
       ],
     }
-    
-    const intensityColors = {
-      Suave: "bg-green-100 text-green-800",
-      Moderada: "bg-yellow-100 text-yellow-800",
-      Intensa: "bg-red-100 text-red-800",
-    }
 
     return (
-        <section className="py-12 px-4 max-w-6xl mx-auto">
+        <section className="py-12 px-4 max-w-6xl mx-auto" id="horarios">
           <h2 className="text-3xl font-bold text-center mb-4">Horarios</h2>
           
           <div className="mb-12 text-center">

@@ -15,6 +15,13 @@ const Navbar = () => {
         {name: 'Contacto', href: '#contacto'},
     ]
 
+    const scrollToSection = (id) => {
+        const section = document.getElementById(id);
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth' });
+        }
+      };
+
     return (
         <nav className="border-b">
             <div className="flex items-center justify-between p-4 max-w-7xl mx-auto">
@@ -22,8 +29,12 @@ const Navbar = () => {
 
                 <div className="hidden md:flex space-x-4 pt-1">
                     {navItems.map(navItem => (
-                        <Link key={navItem.name} to={navItem.href} className="px-3 py-2 rounded-md text-m font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition duration-150 ease-in-out">
+                        <Link key={navItem.name} to={navItem.href} className="px-3 py-2 rounded-md text-m font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition duration-150 ease-in-out" 
+                            onClick={(e) => {e.preventDefault(); 
+                            scrollToSection(navItem.href.substring(1));}}>
+
                             {navItem.name}
+                            
                         </Link>
                     ))}
                 </div>
