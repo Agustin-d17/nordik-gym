@@ -1,17 +1,26 @@
-import { useState } from "react"
+import { useState, useRef } from "react"
 import { MapPin, Facebook, Instagram, MessageCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Alert, AlertDescription } from "@/components/ui/alert"
+import emailjs from '@emailjs/browser';
 
 const ContactSection = () => {
     const [isSubmitted, setIsSubmitted] = useState(false)
-
+    const form = useRef();
     const handleSubmit = (event) => {
         event.preventDefault()
 
         setIsSubmitted(true)
+
+        emailjs.sendForm('service_338k7bd', 'template_jkc6zts', form.current, 'Cc3lLfJ0dMdPowgwt')
+        .then((result) => {
+            console.log(result.text);
+        }, (error) => {
+            console.log(error.text);
+        });
+
         setTimeout(() => setIsSubmitted(false), 3000)
     }
 
@@ -45,11 +54,11 @@ const ContactSection = () => {
                     </AlertDescription>
                   </Alert>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-4">
-                    <Input placeholder="Nombre" required />
-                    <Input type="email" placeholder="Email" required />
-                    <Input placeholder="Teléfono" />
-                    <Textarea placeholder="Mensaje" required />
+                  <form onSubmit={handleSubmit} ref={form} className="space-y-4">
+                    <Input placeholder="Nombre" required name='user_name'/>
+                    <Input type="email" placeholder="Email" required name='user_email'/>
+                    <Input placeholder="Teléfono" name='user_phonenumber'/>
+                    <Textarea placeholder="Mensaje" required name='message'/>
                     <Button type="submit" className="w-full">Enviar mensaje</Button>
                   </form>
                 )}
