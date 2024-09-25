@@ -3,7 +3,7 @@ import FadeInText from "../animations/FadeInText"
 
 const HomeSection = () => {
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center text-center px-4 bg-cover bg-[url('./src/assets/images/background.webp')]">
+    <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center text-center px-4 bg-cover bg-[url('./background.webp')]">
       <FadeInText>
         <h1 className="text-4xl font-bold mb-4 text-gray-100">
           Bienvenido a Nordik Gym
