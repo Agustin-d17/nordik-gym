@@ -14,7 +14,7 @@ const ContactSection = () => {
 
         setIsSubmitted(true)
 
-        emailjs.sendForm('service_338k7bd', 'template_jkc6zts', form.current, 'Cc3lLfJ0dMdPowgwt')
+        emailjs.sendForm('service_mqg8jja', 'template_1qqvbtn', form.current, 'ZJac30-L8_9BnU9l2')
         .then((result) => {
             console.log(result.text);
         }, (error) => {
